@@ -1,0 +1,60 @@
+<!Doctype html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8">
+  <title>Friend Finder</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<body>
+
+<div class="container">
+  <div class="section">
+    <div class="row">
+      <div class="col s12">
+        <h2>Survey Questions</h2>
+        <hr>
+        <h4>About You</h4>
+        <div class="input-field col s12">
+          <input type="text" id="name" class="validate">
+          <label for="name">Name (Required)</label>
+        </div>
+        <div class="input-field col s12">
+          <input type="text" id="photolink" class="validate">
+          <label for="name">Link to Photo Image (Required)</label>
+        </div>
+        <hr>
+        <div class="col s12" style="display:table-cell; vertical-align: bottom;">
+          <div class="col s6">
+            <h5>Question 1</h5>
+          </div>
+          <div class="col s6" style="display:table-cell; vertical-align: bottom;">
+            <span class="left" >1 (Strongly Disagree)</span>
+            <span class="right">5 (Strongly Agree)</span>
+          </div>
+        </div>
+        <div class="col s12">
+          <div class="col s6">
+            <h5>Your mind is always buzzing with unexplored ideas and plans.</h5>
+          </div>
+          <div class="input-field col s6">
+            <form action="#">
+              <p class="range-field">
+                <input type="range" id="q1" min="1" max="5" />
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="./assets/js/materialize.js"></script>
+<script src="./assets/js/init.js"></script>
+</html>
