@@ -8,7 +8,7 @@ app.use(express.json()); //using express JSON data handling
 
 //Setting routes from route files - passing express object in
 require("./app/routing/apiRoutes.js")(app);
-requite("./app/routing/htmlRoutes.js")(app);
+require("./app/routing/htmlRoutes.js")(app);
 
 //Adding listener for server
 app.listen(PORT, function() {

@@ -5,6 +5,7 @@ const path = require("path");
 
 module.exports = function(app) {
   app.post("/api/survey", function(req, res) {
-
+    //TODO add validation here
+    console.log(req)
   })
 };
