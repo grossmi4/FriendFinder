@@ -1,10 +1,22 @@
 //dependencies
 const path = require("path");
+const friends = require("../data/friends.js");
 
 //routing
 
 module.exports = function(app) {
   app.post("/api/survey", function(req, res) {
+
+    //retrieve data array from request
     console.log(req.body.data);
-    /*TODO add validation here*/})
+    const data = req.body.data;
+
+    //compare new data to friends array to find similarities
+    friends.forEach
+
+    //push new person to friends array
+    friends.push(data);
+
+
+  })
 };
