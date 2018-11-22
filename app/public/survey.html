@@ -146,7 +146,9 @@ let submission = [];
       console.log(data);
       console.log(status);
         }
-      )
+      ).then( ()=> {
+      location.assign("/");
+    })
   });
 
 </script>
