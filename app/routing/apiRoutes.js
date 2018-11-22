@@ -13,14 +13,12 @@ module.exports = function(app) {
     const newPersonAttr = data.slice(2);
 
     //declare empty array that will hold match information
-    let matchPairArray = [];
     let matchArray = [];
 
     //compare new data to friends array to find similarities
     friends.forEach(person =>{
       //use arrayNumMatch to find match level between friend and survey submission
       const matchValue = arrayNumMatch(person.slice(2),newPersonAttr);
-      matchPairArray.push([person[0],matchValue]); //push id and result into matchPairArray
       matchArray.push(matchValue); //push only matchValue into matchArray to be used to calculate max
     });
 
@@ -29,15 +27,12 @@ module.exports = function(app) {
     console.log(`closest friend match scored a difference value of ${bestMatchVal}`);
 
     //find the first friend with a match value of the min
-    const bestMatchName = matchPairArray[matchArray.indexOf(bestMatchVal)][0];
-    
-
-
-
+    const bestMatch = friends[matchArray.indexOf(bestMatchVal)];
 
     //push new person to friends array
     friends.push(data);
 
+    res.json(bestMatch)
     //TODO trigger model with best match
   })
 };

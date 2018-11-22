@@ -120,8 +120,16 @@
         </div>
       </div>
       <div class="row">
-        <button type="submit" class="waves-effect waves-red red darken-3 btn" id="submit">Submit</button>
+        <button type="submit" class="waves-effect waves-red red darken-3 btn modal-trigger" id="submit" href="#modal1">Submit</button>
       </div>
+    <div id="modal1" class="modal">
+      <div class="modal-content" id="modal1-content">
+        <h4>Your New Best Friend</h4>
+      </div>
+      <div class="modal-footer">
+        <a href="/" class="modal-close waves-effect waves-green btn-flat">close</a>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -131,6 +139,7 @@
 <script src="./assets/js/init.js"></script>
 <script type="text/javascript">
 let submission = [];
+let response = [];
   $("#submit").on("click", function() {
     submission = [
       $("#name").val().trim(),
@@ -141,14 +150,17 @@ let submission = [];
       $("#q4").val(),
       $("#q5").val(),
     ];
-    console.log(submission);
     $.post("/api/survey", { data: submission }, function(data, status) {
-      console.log(data);
+      response = data;
       console.log(status);
         }
-      ).then( ()=> {
-      location.assign("/");
-    })
+      )
+      .then( ()=> {
+        console.log(`modal response: ${response}`);
+        $("#modal1-content").append(`<h4>${response[0]}</h4>
+          <img src="${response[1]}" style="width:550px;height:300px;">
+        `)
+      })
   });
 
 </script>
